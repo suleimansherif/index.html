@@ -302,28 +302,32 @@
         
         .service-icon {
             font-size: 3rem;
-            color: var(--primary);
+            color: rgb(6, 36, 133);
             margin-bottom: 1.5rem;
         }
         
         .service-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            margin-bottom: 1.5rem;
+            color: hwb(231 12% 6% / 0.747);
         }
         
         .service-card p {
-            color: var(--gray);
+            color: #0c8cd6d7;
             margin-bottom: 1.5rem;
+            font-size: large;
+            font-weight: bold;
         }
         
         .service-link {
-            color: var(--primary);
+            color: rgba(6, 62, 248, 0.438);
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: large;
         }
         
         .service-link i {
@@ -831,6 +835,260 @@
     font-size: 0.7rem;
     color: #666;
 }
+
+
+   /* Pricing Section Styles */
+.service-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.service-tab {
+    padding: 0.8rem 2rem;
+    background:  #d9dfe2;
+    color: #64748b;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.service-tab:hover, .service-tab.active {
+    background: linear-gradient(135deg, #2563eb, #f59e0b);
+    color: white;
+}
+
+.service-category {
+    display: none;
+}
+
+.service-category.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background:  #d9dfe2;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #f59e0b;
+    color: white;
+    padding: 0.3rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #2563eb, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.service {
+    color: #475569;
+}
+
+.price {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.book-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #f59e0b);
+}
+
+/* Booking Modal Styles */
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background:  #d9dfe2;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.submit-booking {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2563eb, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.success-message i {
+    font-size: 3rem;
+    color: #10b981;
+}
+
+/* Terms Styles */
+.terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.term-item {
+    background: #d9dfe2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid #2563eb;
+}
+
+.term-item h4 {
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+}
+
+.term-item h4 i {
+    margin-right: 0.8rem;
+    color: #f59e0b;
+}
+
+.term-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.term-item li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.term-item li i {
+    color: #f59e0b;
+    margin-right: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.highlight-term {
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+.warning-term {
+    color: #f97316;
+}
+
+.danger-term {
+    color: #ef4444;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
         /* Team Section */
         .team {
             background-color: #f1f5f9;
@@ -1421,6 +1679,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#team">Team</a></li>
+                <li><a href="#pricing">pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1491,15 +1750,28 @@
             <h2>Our Services</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" style="
+            background-image: url('mylogo/web\ development.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
                 <h3>Custom Web Development</h3>
                 <p>Tailored web solutions built from scratch to meet your specific business requirements with clean, efficient code.</p>
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            
             </div>
-            <div class="service-card">
+            <div class="service-card" style="
+            background-image: url('mylogo/responsive\ design.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
@@ -1507,23 +1779,41 @@
                 <p>Websites that look and function perfectly on all devices, from desktops to smartphones.</p>
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card"   style="
+            background-image: url('mylogo/ecommerce.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <h3>E-Commerce Solutions</h3>
                 <p>Powerful online stores with secure payment gateways, inventory management, and marketing tools.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="https://thriveagency.com/digital-marketing-services/ecommerce-marketing/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="
+            background-image: url('mylogo/Seo\ optmization.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-search"></i>
                 </div>
                 <h3>SEO Optimization</h3>
                 <p>Boost your search engine rankings and increase organic traffic with our proven SEO strategies.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="https://developers.google.com/search/docs" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="
+            background-image: url('mylogo/web\ perfomance.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-rocket"></i>
                 </div>
@@ -1531,7 +1821,13 @@
                 <p>Lightning-fast websites with optimized performance for better user experience and conversions.</p>
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="
+            background-image: url('mylogo/ongoing\ support.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur;
+            height: 400px;
+            width: 100%; ">
                 <div class="service-icon">
                     <i class="fas fa-headset"></i>
                 </div>
@@ -1791,6 +2087,370 @@
         </div>
     </section>
 
+            
+             <!-- Pricing & Booking Section -->
+<section class="section pricing-section" id="pricing">
+    <div class="section-title">
+        <h2>Our Digital Solutions</h2>
+        <p>Transparent pricing for professional services</p>
+    </div>
+
+    <!-- Service Category Tabs -->
+    <div class="service-tabs">
+        <button class="service-tab active" data-category="web">Web Services</button>
+        <button class="service-tab" data-category="design">Design & Branding</button>
+        <button class="service-tab" data-category="seo">SEO & Maintenance</button>
+    </div>
+
+    <!-- Web Services -->
+    <div class="service-category active" id="web-services">
+        <div class="pricing-cards">
+            <!-- Web Development -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Custom solutions for every business need</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">1-Page Website</span>
+                        <span class="price">10,000 - 20,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">5-Page Website</span>
+                        <span class="price">20,000 - 50,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Business Website</span>
+                        <span class="price">30,000 - 80,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">E-commerce Site</span>
+                        <span class="price">200,000 & Above<span>
+                    </li>
+                    <li>
+                        <span class="service">Custom Applications</span>
+                        <span class="price">150,000+ Ksh</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="Web Development">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+
+            <!-- Website Fixing -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Requested</div>
+                <div class="card-header">
+                    <i class="fas fa-tools"></i>
+                    <h3>Website Fixing & Updates</h3>
+                    <p>Get your site running smoothly again</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Minor Fixes</span>
+                        <span class="price">5,000 - 10,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Monthly Updates</span>
+                        <span class="price">10,000 - 30,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Full Redesign</span>
+                        <span class="price">30,000 - 80,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Emergency Fix</span>
+                        <span class="price">+50%</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="Website Fixing & Updates">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive user experiences</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Simple Design (1-3 pages)</span>
+                        <span class="price">8,000 - 15,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Advanced Design</span>
+                        <span class="price">25,000 - 50,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Interactive Prototype</span>
+                        <span class="price">8,000 - 15,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Design + Development</span>
+                        <span class="price">Save 15%</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="UI/UX Design">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design & Branding -->
+    <div class="service-category" id="design-services">
+        <div class="pricing-cards">
+            <!-- Logo Design -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <i class="fas fa-palette"></i>
+                    <h3>Ultimate Brand Identity Bundle</h3>
+                    <p>Make your brand unforgettable</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Basic Logo</span>
+                        <span class="price">5,000 - 10,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Professional Package</span>
+                        <span class="price">10,000 - 30,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Business Card</span>
+                        <span class="price">8,000 - 15,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Full Brand Identity</span>
+                        <span class="price">50,000 - 60,000 Ksh</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="Ultimate Brand Identity Bundle">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+            
+            <!-- Social Media Package -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Trending</div>
+                <div class="card-header">
+                    <i class="fas fa-hashtag"></i>
+                    <h3>Social Media Package</h3>
+                    <p>Boost your online presence</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Social Media Setup</span>
+                        <span class="price">5,000 - 15,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Content Creation (10 posts)</span>
+                        <span class="price">15,000 - 25,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Monthly Management</span>
+                        <span class="price">30,000 - 50,000 Ksh</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="Social Media Package">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO & Maintenance -->
+    <div class="service-category" id="seo-services">
+        <div class="pricing-cards">
+            <!-- SEO Services -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO Optimization</h3>
+                    <p>Get found by your customers</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Basic SEO (10 keywords)</span>
+                        <span class="price">15,000 - 30,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Standard Monthly SEO</span>
+                        <span class="price">40,000 - 80,000 Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Enterprise SEO</span>
+                        <span class="price">100,000 - 150,000+ Ksh</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="SEO Optimization">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+            
+            <!-- Website Maintenance -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Website Maintenance</h3>
+                    <p>Keep your site secure and updated</p>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span class="service">Basic Maintenance</span>
+                        <span class="price">15,000/month Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Premium Care</span>
+                        <span class="price">25,000/month Ksh</span>
+                    </li>
+                    <li>
+                        <span class="service">Security Audit</span>
+                        <span class="price">30,000 - 50,000 Ksh</span>
+                    </li>
+                </ul>
+                <button class="book-btn" data-service="Website Maintenance">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <div id="form-container">
+                <h3>Book <span id="selected-service">Your Service</span></h3>
+                
+                <form id="booking-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="Suleiman">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="suleiman@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" required placeholder="+(-) 700 000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <input type="text" id="service" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Your Budget (Ksh)</label>
+                            <input type="number" id="budget" placeholder="Enter your budget">
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency</label>
+                            <select id="urgency">
+                                <option value="standard">Standard Timeline</option>
+                                <option value="urgent">Urgent (+25%)</option>
+                                <option value="flexible">Flexible Timeline</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="details">Project Details</label>
+                        <textarea id="details" rows="4" placeholder="Describe your project needs, timeline, and any specific requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="checkbox">
+                            <input type="checkbox" required> 
+                            I agree to Urbanlabs Technology's <a href="#terms" style="color: #2563eb;">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-booking">
+                        <i class="fas fa-paper-plane"></i> Submit Booking Request
+                    </button>
+                </form>
+            </div>
+            
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h4>Booking Request Submitted!</h4>
+                <p>Thank you for choosing Urbanlabs Technology. We've received your request and will contact you within 24 hours to discuss your project.</p>
+                <button class="submit-booking" id="close-success">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Terms & Conditions Section -->
+<div class="terms-conditions">
+    <h3 class="terms-title"><i class="fas fa-file-contract"></i> Our Terms & Conditions</h3>
+    <div class="terms-grid">
+        <div class="term-item">
+            <h4><i class="fas fa-file-invoice-dollar"></i> Payment Terms</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">50% deposit required</span> before project commencement</li>
+                <li><i class="fas fa-check"></i> Remaining <span class="highlight-term">50% due upon project completion</span></li>
+                <li><i class="fas fa-check"></i> Accepted methods: <span class="highlight-term">M-Pesa, bank transfer, PayPal</span></li>
+            </ul>
+        </div>
+        
+        <div class="term-item">
+            <h4><i class="fas fa-clock"></i> Project Timeline</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> Work begins after <span class="highlight-term">deposit confirmation</span></li>
+                <li><i class="fas fa-check"></i> Client delays may <span class="warning-term">extend timeline</span></li>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">Urgent projects</span> require +25% fee</li>
+            </ul>
+        </div>
+        
+        <div class="term-item">
+            <h4><i class="fas fa-sync-alt"></i> Revisions Policy</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">3 free revisions</span> included</li>
+                <li><i class="fas fa-check"></i> Additional revisions at <span class="warning-term">2,000 Ksh/hour</span></li>
+                <li><i class="fas fa-check"></i> Major changes may require <span class="highlight-term">new quotation</span></li>
+            </ul>
+        </div>
+        
+        <div class="term-item">
+            <h4><i class="fas fa-copyright"></i> Ownership Rights</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> Full rights transfer after <span class="highlight-term">final payment</span></li>
+                <li><i class="fas fa-check"></i> Portfolio usage rights <span class="warning-term">unless specified</span></li>
+                <li><i class="fas fa-check"></i> Client owns all <span class="highlight-term">final deliverables</span></li>
+            </ul>
+        </div>
+        
+        <div class="term-item">
+            <h4><i class="fas fa-undo"></i> Cancellations</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> Deposit <span class="danger-term">non-refundable after work begins</span></li>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">Full refund if we fail to deliver</span></li>
+                <li><i class="fas fa-check"></i> <span class="warning-term">Cancellation fee after 50% completion</span></li>
+            </ul>
+        </div>
+        
+        <div class="term-item">
+            <h4><i class="fas fa-shield-alt"></i> Maintenance</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">1 month free</span> support after launch</li>
+                <li><i class="fas fa-check"></i> <span class="highlight-term">Ongoing support</span> packages available</li>
+                <li><i class="fas fa-check"></i> Emergency support at <span class="warning-term">3,000 Ksh/hour</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <!-- Team Section -->
     <section class="section team" id="team">
@@ -1920,7 +2580,7 @@
                     <div class="contact-details">
                         <h3>Email Us</h3>
                         <a href="mailto:info@Urbanlabstechnology.com">Urbanlabstechnology@gmail.com</a>
-                        <a href="mailto:info@suleimansheri21@gmail.com">suleimansheri21@gmail.com</a>
+                       
                     </div>
                 </div>
                 <div class="contact-card">
@@ -1929,7 +2589,7 @@
                     </div>
                     <div class="contact-details">
                         <h3>Call Us</h3>
-                        <a href="tel:+0740023790">+(254) 740023790</a>
+                        <a href="tel:+0740023790">+(254) 740023790</a> <br>
                         <a href="tel:+0757696078">+(254) 757696078</a>
                     </div>
                 </div>
@@ -1991,6 +2651,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#pricing">pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -2006,7 +2667,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>News letter</h3>
+                <h3>News Letter</h3>
                 <p>Subscribe to our news letter for the latest updates and offers.</p>
                 <form>
                     <div class="form-group">
@@ -2175,6 +2836,161 @@
         
         // Initialize
         showTestimonial(0);
+
+       // Service Tab Switching
+const serviceTabs = document.querySelectorAll('.service-tab');
+const serviceCategories = document.querySelectorAll('.service-category');
+
+serviceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs and categories
+        serviceTabs.forEach(t => t.classList.remove('active'));
+        serviceCategories.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding category
+        const categoryId = tab.dataset.category + '-services';
+        document.getElementById(categoryId).classList.add('active');
+    });
+});
+
+// Booking Modal
+const bookButtons = document.querySelectorAll('.book-btn');
+const bookingModal = document.querySelector('.booking-modal');
+const closeModal = document.querySelector('.close-modal');
+const selectedServiceField = document.getElementById('selected-service');
+const serviceInput = document.getElementById('service');
+const bookingForm = document.getElementById('booking-form');
+const formContainer = document.getElementById('form-container');
+const successMessage = document.querySelector('.success-message');
+const closeSuccessBtn = document.getElementById('close-success');
+
+bookButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const service = button.dataset.service;
+        selectedServiceField.textContent = service;
+        serviceInput.value = service;
+        bookingModal.style.display = 'flex';
+        formContainer.style.display = 'block';
+        successMessage.style.display = 'none';
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    bookingModal.style.display = 'none';
+});
+
+closeSuccessBtn.addEventListener('click', () => {
+    bookingModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === bookingModal) {
+        bookingModal.style.display = 'none';
+    }
+});
+
+// Form Submission
+bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const service = serviceInput.value;
+    const budget = document.getElementById('budget').value;
+    
+    // Simple validation
+    if (!name || !service) {
+        alert('Please fill in all required fields');
+        return;
+    }
+    
+    // Show success message
+    formContainer.style.display = 'none';
+    successMessage.style.display = 'block';
+    
+    // Reset form
+    bookingForm.reset();
+    
+    // Optional: Send data to server here
+    // fetch('/api/bookings', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         name: name,
+    //         service: service,
+    //         budget: budget
+    //     }),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // })
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch(error => console.error(error));
+});
+
+// Animate terms cards on scroll
+const termCards = document.querySelectorAll('.term-item');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+termCards.forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'all 0.5s ease';
+    observer.observe(card);
+});
+//contact form
+document.querySelector('.contact-form form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const form = e.target;
+  const submitBtn = form.querySelector('.submit-btn');
+  const originalBtnText = submitBtn.textContent;
+  
+  try {
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    const formData = {
+      name: form.querySelector('#name').value,
+      email: form.querySelector('#email').value,
+      subject: form.querySelector('#subject').value,
+      message: form.querySelector('#message').value
+    };
+    
+    const response = await fetch('http://localhost:5500/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      alert(data.error || 'Failed to send message'); 
+    }
+  } catch (error) {
+    alert('Network error. Please try again.');
+    console.error('Error:', error);
+  } finally {
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+  }
+});
     </script>
 </body>
 </html>
