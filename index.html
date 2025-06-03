@@ -277,7 +277,7 @@
         
         /* Services Section */
         .services {
-            background-color: #f1f5f9;
+            background-color: #b5c7da;
         }
         
         .services-grid {
@@ -287,7 +287,7 @@
         }
         
         .service-card {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.733);
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -309,18 +309,18 @@
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: hwb(231 12% 6% / 0.747);
+            color: hwb(231 5% 13% / 0.747);
         }
         
         .service-card p {
-            color: #0c8cd6d7;
+            color: #2741d38e;
             margin-bottom: 1.5rem;
             font-size: large;
             font-weight: bold;
         }
         
         .service-link {
-            color: rgba(6, 62, 248, 0.438);
+            color: rgba(1, 4, 14, 0.986);
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -495,7 +495,6 @@
             font-size: 0.8rem;
             margin: 5px 0;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -954,6 +953,57 @@
     background: linear-gradient(135deg, #1d4ed8, #f59e0b);
 }
 
+/* Payment Method Styles */
+.payment-methods {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.payment-option {
+    flex: 1;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option label {
+    display: block;
+    padding: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.payment-option i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.payment-details {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+/* Card Input Styling */
+#card-number, #card-expiry, #card-cvv {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+
+
 /* Booking Modal Styles */
 .booking-modal {
     display: none;
@@ -969,12 +1019,52 @@
 }
 
 .modal-content {
-    background:  #d9dfe2;
+    background: #d9dfe2;
     border-radius: 12px;
     padding: 2rem;
     width: 90%;
     max-width: 600px;
+    max-height: 90vh; 
+    overflow-y: auto; 
     position: relative;
+}
+
+#booking-form {
+    width: 100%;
+}
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+
 }
 
 .close-modal {
@@ -1032,6 +1122,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+.terms-title {
+  text-align:center;
+  margin-bottom: 3rem;
+  position: relative;
+
+}
+.terms-title h3{
+    color: var(--primary);
+    font-size:2.5rem;
 }
 
 .term-item {
@@ -1226,6 +1327,29 @@
             background-color: var(--primary);
             transform: scale(1.2);
         }
+
+    /*loading spiner*/
+        .loading {
+    position: relative;
+    pointer-events: none;
+}
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #9c2e2e;
+    animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
         
         /* Contact Section */
         .contact {
@@ -1681,6 +1805,7 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#pricing">pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#ourTerms">Our Terms&Conditions</a></li>
             </ul>
         </div>
     </header>
@@ -1708,7 +1833,7 @@
             </div>
             <div class="about-text">
                 <h3>Innovative Web Solutions Since 2018</h3>
-                <p>At CodeCraft Studios, we combine creativity with technical expertise to deliver exceptional web development services tailored to your business needs.</p>
+                <p>At Urban Labs Technology, we combine creativity with technical expertise to deliver exceptional web development services tailored to your business needs.</p>
                 <p>Our team of passionate developers and designers work collaboratively to create digital experiences that not only look stunning but also drive results and engage your audience.</p>
                 
                 <div class="skills">
@@ -1750,13 +1875,7 @@
             <h2>Our Services</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card" style="
-            background-image: url('mylogo/web\ development.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
@@ -1765,13 +1884,7 @@
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             
             </div>
-            <div class="service-card" style="
-            background-image: url('mylogo/responsive\ design.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
@@ -1779,13 +1892,7 @@
                 <p>Websites that look and function perfectly on all devices, from desktops to smartphones.</p>
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card"   style="
-            background-image: url('mylogo/ecommerce.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card" >
                 <div class="service-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
@@ -1793,13 +1900,7 @@
                 <p>Powerful online stores with secure payment gateways, inventory management, and marketing tools.</p>
                 <a href="https://thriveagency.com/digital-marketing-services/ecommerce-marketing/" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card" style="
-            background-image: url('mylogo/Seo\ optmization.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card" >
                 <div class="service-icon">
                     <i class="fas fa-search"></i>
                 </div>
@@ -1807,13 +1908,7 @@
                 <p>Boost your search engine rankings and increase organic traffic with our proven SEO strategies.</p>
                 <a href="https://developers.google.com/search/docs" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card" style="
-            background-image: url('mylogo/web\ perfomance.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-rocket"></i>
                 </div>
@@ -1821,13 +1916,7 @@
                 <p>Lightning-fast websites with optimized performance for better user experience and conversions.</p>
                 <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card" style="
-            background-image: url('mylogo/ongoing\ support.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur;
-            height: 400px;
-            width: 100%; ">
+            <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-headset"></i>
                 </div>
@@ -1869,7 +1958,7 @@
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="web">Web Design</button>
             <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            <button class="filter-btn" data-filter="mobile">Urban-Fitness</button>
             <button class="filter-btn" data-filter="branding">Branding</button>
         </div>
         <div class="portfolio-grid">
@@ -1911,7 +2000,7 @@
                     </div>
                 </div>
                 <div class="portfolio-overlay">
-                    <h3>GlobalShop E-Commerce</h3>
+                    <h3>Urban Labs Global Shop E-Commerce</h3>
                     <p>A premium online marketplace with modern UI/UX design and advanced shopping features</p>
                     <a href="#" class="btn btn-secondary">Coming Soon - View Case Study</a>
                 </div>
@@ -1963,7 +2052,7 @@
         <div class="voyago-header">
             <div class="voyago-logo">
                 <i class="fas fa-plane"></i>
-                <span>Urban Online Booking</span>
+                <span>Urban Labs Online Booking</span>
             </div>
         </div>
         <div class="voyago-content">
@@ -2003,16 +2092,17 @@
             </div>
         </div>
     </div>
+
     <div class="portfolio-overlay">
-        <h3>UrbanLabs Travel Booking</h3>
+        <h3>Urban Labs Travel Booking</h3>
         <p>A smart travel booking platform with real-time availability, AI recommendations, and interactive trip planning</p>
         <a href="#" class="btn btn-secondary">Coming Soon - View Case Study</a>
     </div>
-    
+
             <div class="portfolio-item" data-category="ecommerce">
                 <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 2" class="portfolio-img">
                 <div class="portfolio-overlay">
-                    <h3>Fashion Store</h3>
+                    <h3>Urban Labs Fashion Store</h3>
                     <p>E-commerce platform with custom product configurator</p>
                     <a href="#" class="btn btn-secondary">Coming Soon - View Case Study</a>
                 </div>
@@ -2061,9 +2151,9 @@
     </div>
 </div>
             <div class="portfolio-item" data-category="mobile">
-                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3" class="portfolio-img">
+                <img src="mylogo/gym fitness.jpg" alt="Project 3" class="portfolio-img">
                 <div class="portfolio-overlay">
-                    <h3>Fitness App</h3>
+                    <h3>Urban Labs Fitness Gym</h3>
                     <p>Cross-platform mobile application for workout tracking</p>
                     <a href="#" class="btn btn-secondary">Coming Soon - View Case Study</a>
                 </div>
@@ -2071,7 +2161,7 @@
             <div class="portfolio-item" data-category="web">
                 <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 4" class="portfolio-img">
                 <div class="portfolio-overlay">
-                    <h3>Travel Portal</h3>
+                    <h3>Urban Labs Travel Portal</h3>
                     <p>Interactive booking platform with real-time availability</p>
                     <a href="#" class="btn btn-secondary">Coming Soon - View Case Study</a>
                 </div>
@@ -2321,80 +2411,135 @@
         </div>
     </div>
 
-    <!-- Booking Modal -->
-    <div class="booking-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
+
+  <!-- Booking Modal -->
+<div class="booking-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        
+        <div id="form-container">
+            <h3>Book <span id="selected-service">Your Service</span></h3>
             
-            <div id="form-container">
-                <h3>Book <span id="selected-service">Your Service</span></h3>
+            <form id="booking-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Suleiman">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="suleiman@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" required placeholder="+254 700 000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service</label>
+                        <input type="text" id="service" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Your Budget (Ksh)</label>
+                        <input type="number" id="budget" placeholder="Enter your budget">
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency</label>
+                        <select id="urgency">
+                            <option value="standard">Standard Timeline</option>
+                            <option value="urgent">Urgent (+25%)</option>
+                            <option value="flexible">Flexible Timeline</option>
+                        </select>
+                    </div>
+                </div>
                 
-                <form id="booking-form">
+                <div class="form-group full-width">
+                    <label for="details">Project Details</label>
+                    <textarea id="details" rows="4" placeholder="Describe your project needs, timeline, and any specific requirements..."></textarea>
+                </div>
+                
+                <!-- Payment Method Selection -->
+                <div class="form-group full-width">
+                    <h4>Payment Method</h4>
+                    <div class="payment-methods">
+                        <div class="payment-option">
+                            <input type="radio" id="mpesa" name="payment" value="mpesa" checked>
+                            <label for="mpesa">
+                                <i class="fas fa-mobile-alt"></i> M-Pesa
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="payment" value="card">
+                            <label for="card">
+                                <i class="far fa-credit-card"></i> Credit/Debit Card
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- M-Pesa Payment Fields (shown by default) -->
+                <div class="payment-details" id="mpesa-details">
+                    <div class="form-group">
+                        <label for="mpesa-phone">M-Pesa Phone Number</label>
+                        <input type="tel" id="mpesa-phone" placeholder="+2547XXXXXXXX" value="254">
+                    </div>
+                    <div class="form-group">
+                        <p>You will receive an M-Pesa push notification to complete payment after submitting this form.</p>
+                    </div>
+                </div>
+                
+                <!-- Card Payment Fields (hidden by default) -->
+                <div class="payment-details" id="card-details" style="display: block;">
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    </div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required placeholder="Suleiman">
+                            <label for="card-expiry">Expiry Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required placeholder="suleiman@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" required placeholder="+(-) 700 000000">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service</label>
-                            <input type="text" id="service" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Your Budget (Ksh)</label>
-                            <input type="number" id="budget" placeholder="Enter your budget">
-                        </div>
-                        <div class="form-group">
-                            <label for="urgency">Urgency</label>
-                            <select id="urgency">
-                                <option value="standard">Standard Timeline</option>
-                                <option value="urgent">Urgent (+25%)</option>
-                                <option value="flexible">Flexible Timeline</option>
-                            </select>
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123">
                         </div>
                     </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="details">Project Details</label>
-                        <textarea id="details" rows="4" placeholder="Describe your project needs, timeline, and any specific requirements..."></textarea>
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" placeholder="Full Name">
                     </div>
-                    
-                    <div class="form-group full-width">
-                        <label class="checkbox">
-                            <input type="checkbox" required> 
-                            I agree to Urbanlabs Technology's <a href="#terms" style="color: #2563eb;">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="submit-booking">
-                        <i class="fas fa-paper-plane"></i> Submit Booking Request
-                    </button>
-                </form>
-            </div>
-            
-            <div class="success-message">
-                <i class="fas fa-check-circle"></i>
-                <h4>Booking Request Submitted!</h4>
-                <p>Thank you for choosing Urbanlabs Technology. We've received your request and will contact you within 24 hours to discuss your project.</p>
-                <button class="submit-booking" id="close-success">
-                    <i class="fas fa-times"></i> Close
+                </div>
+                
+                <div class="form-group full-width">
+                    <label class="checkbox">
+                        <input type="checkbox" required> 
+                        I agree to Urbanlabs Technology's <a href="#terms" style="color: #2563eb;">Terms & Conditions</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-booking">
+                    <i class="fas fa-paper-plane"></i> Submit Booking Request
                 </button>
-            </div>
+            </form>
+        </div>
+        
+        <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <h4>Booking Request Submitted!</h4>
+            <p>Thank you for choosing Urbanlabs Technology. We've received your request and will contact you within 24 hours to discuss your project.</p>
+            <button class="submit-booking" id="close-success">
+                <i class="fas fa-times"></i> Close
+            </button>
         </div>
     </div>
-</section>
+</div>
 
 
 <!-- Terms & Conditions Section -->
 <div class="terms-conditions">
-    <h3 class="terms-title"><i class="fas fa-file-contract"></i> Our Terms & Conditions</h3>
+<div class="terms-title">   
+    <h3>Our Terms & Conditions</h3>
+    <p>Please read & understand our terms & Conditions regarding UrbanLabs contract form submission</p>
+    </div>
     <div class="terms-grid">
         <div class="term-item">
             <h4><i class="fas fa-file-invoice-dollar"></i> Payment Terms</h4>
@@ -2486,6 +2631,24 @@
                     </div>
                 </div>
             </div>
+     
+             <div class="team-grid">
+            <div class="team-member">
+                <img src="mylogo/urban secretary.jpg" alt="Amina Mmbone" class="member-img">
+                <div class="member-info">
+                    <h3>Amina Mmbone</h3>
+                    <p>Secretary</p>
+                    <p>Fashion and Design Manager</p>
+                    <div class="member-social">
+                        <a href="https://wa.me/254757696078"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/suleimansherif"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/Mxl1499716Man?t=BH1zUiwG_LDHybsATD4F7Q&s=09"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
             <div class="team-member">
                 <img src="mylogo/torna basket.jpg" alt="Mahad" class="member-img">
                 <div class="member-info">
@@ -2531,20 +2694,7 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
-    <section class="clients">
-        <div class="section-title">
-            <h2>Our Clients</h2>
-        </div>
-        <div class="clients-grid">
-            <img src="mylogo/client 4.jpg" alt="Client Logo" class="client-logo">
-            <img src="mylogo/client 3.jpg" alt="Client Logo" class="client-logo">
-            <img src="mylogo/client 2.jpg" alt="Client Logo" class="client-logo">
-            <img src="mylogo/rtypsty.jpg" alt="Client Logo" class="client-logo">
-            <img src="mylogo/client 1.jpg" alt="Client Logo" class="client-logo">
-        </div>
-    </section>
-
+    
     <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="newsletter-container">
@@ -2605,7 +2755,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form>
+                <form action="http://localhost:5500/submit" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" class="form-control" required>
@@ -2653,6 +2803,7 @@
                     <li><a href="#team">Team</a></li>
                     <li><a href="#pricing">pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
+                       <li><a href="#ourterms">OurTerms & Conditions</li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -2683,314 +2834,454 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                if(this.getAttribute('href') === '#') return;
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if(navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-        });
-        
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if(filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Testimonial Slider
-        let currentSlide = 0;
-        const testimonials = [
-            {
-                img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-                name: "Emily Rodriguez",
-                role: "CEO, TechSolutions Inc.",
-                text: "\"Urbanlabstechnology transformed our online presence completely. Their attention to detail and technical expertise resulted in a website that not only looks amazing but has significantly increased our conversion rates.\"",
-                rating: 5
-            },
-
-            {
-                img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-                name: "Michael Johnson",
-                role: "Marketing Director, BrandCo",
-                text: "\"Working with Urbanlabstechnology was a game-changer for our e-commerce platform. Their team delivered beyond our expectations with innovative solutions that boosted our sales by 40%.\"",
-                rating: 5
-            },
-
-            {
-                img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-                name: "Sarah Williams",
-                role: "Founder, StartupX",
-                text: "\"The mobile app developed by Urbanlabstechnologys has been instrumental in our growth. Their technical skills and creative approach made all the difference in our product.\"",
-                rating: 4
-            }
-         
-        ];
-        
-        const sliderDots = document.querySelectorAll('.slider-dot');
-        
-        function showTestimonial(index) {
-            const testimonial = document.querySelector('.testimonial');
-            const { img, name, role, text, rating } = testimonials[index];
-            
-            testimonial.innerHTML = `
-                <img src="${img}" alt="${name}" class="client-img">
-                <div class="rating">
-                    ${'<i class="fas fa-star"></i>'.repeat(rating)}
-                </div>
-                <p>${text}</p>
-                <div class="client-name">${name}</div>
-                <div class="client-role">${role}</div>
-            `;
-            
-            sliderDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-        
-        sliderDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                showTestimonial(currentSlide);
-            });
-        });
-        
-        // Auto slide change
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % testimonials.length;
-            showTestimonial(currentSlide);
-        }, 5000);
-        
-        // Animate stats counter
-        function animateStats() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            const speed = 200;
-            
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                const count = parseInt(stat.textContent);
-                const increment = Math.ceil(target / speed);
-                
-                if(count < target) {
-                    stat.textContent = count + increment;
-                    setTimeout(animateStats, 1);
-                } else {
-                    stat.textContent = target;
-                }
-            });
-        }
-        
-        // Run animation when stats section is in view
-        window.addEventListener('scroll', () => {
-            const statsSection = document.querySelector('.stats');
-            const sectionTop = statsSection.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if(sectionTop < windowHeight - 100) {
-                animateStats();
-                // Remove event listener after animation runs
-                window.removeEventListener('scroll', this);
-            }
-        });
-        
-        // Initialize
-        showTestimonial(0);
-
-       // Service Tab Switching
-const serviceTabs = document.querySelectorAll('.service-tab');
-const serviceCategories = document.querySelectorAll('.service-category');
-
-serviceTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs and categories
-        serviceTabs.forEach(t => t.classList.remove('active'));
-        serviceCategories.forEach(c => c.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        tab.classList.add('active');
-        
-        // Show corresponding category
-        const categoryId = tab.dataset.category + '-services';
-        document.getElementById(categoryId).classList.add('active');
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
+    
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if(this.getAttribute('href') === '#') return;
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if(navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            }
+        });
+    });
+    
+    // Portfolio Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+            
+            const filter = btn.getAttribute('data-filter');
+            
+            portfolioItems.forEach(item => {
+                if(filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Testimonial Slider
+    let currentSlide = 0;
+    const testimonials = [
+        {
+            img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+            name: "Emily Rodriguez",
+            role: "CEO, TechSolutions Inc.",
+            text: "\"Urbanlabstechnology transformed our online presence completely. Their attention to detail and technical expertise resulted in a website that not only looks amazing but has significantly increased our conversion rates.\"",
+            rating: 5
+        },
+        {
+            img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+            name: "Michael Johnson",
+            role: "Marketing Director, BrandCo",
+            text: "\"Working with Urbanlabstechnology was a game-changer for our e-commerce platform. Their team delivered beyond our expectations with innovative solutions that boosted our sales by 40%.\"",
+            rating: 5
+        },
+        {
+            img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+            name: "Sarah Williams",
+            role: "Founder, StartupX",
+            text: "\"The mobile app developed by Urbanlabstechnologys has been instrumental in our growth. Their technical skills and creative approach made all the difference in our product.\"",
+            rating: 4
+        }
+    ];
+    
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    
+    function showTestimonial(index) {
+        const testimonial = document.querySelector('.testimonial');
+        const { img, name, role, text, rating } = testimonials[index];
+        
+        testimonial.innerHTML = `
+            <img src="${img}" alt="${name}" class="client-img">
+            <div class="rating">
+                ${'<i class="fas fa-star"></i>'.repeat(rating)}
+            </div>
+            <p>${text}</p>
+            <div class="client-name">${name}</div>
+            <div class="client-role">${role}</div>
+        `;
+        
+        sliderDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+    
+    sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showTestimonial(currentSlide);
+        });
+    });
+    
+    // Auto slide change
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % testimonials.length;
+        showTestimonial(currentSlide);
+    }, 5000);
+    
+    // Animate stats counter
+    function animateStats() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const speed = 200;
+        
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const count = parseInt(stat.textContent);
+            const increment = Math.ceil(target / speed);
+            
+            if(count < target) {
+                stat.textContent = count + increment;
+                setTimeout(animateStats, 1);
+            } else {
+                stat.textContent = target;
+            }
+        });
+    }
+    
+    // Run animation when stats section is in view
+    window.addEventListener('scroll', () => {
+        const statsSection = document.querySelector('.stats');
+        const sectionTop = statsSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if(sectionTop < windowHeight - 100) {
+            animateStats();
+            // Remove event listener after animation runs
+            window.removeEventListener('scroll', this);
+        }
+    });
+    
+    // Initialize
+    showTestimonial(0);
+
+    // Service Tab Switching
+    const serviceTabs = document.querySelectorAll('.service-tab');
+    const serviceCategories = document.querySelectorAll('.service-category');
+
+    serviceTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and categories
+            serviceTabs.forEach(t => t.classList.remove('active'));
+            serviceCategories.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            tab.classList.add('active');
+            
+            // Show corresponding category
+            const categoryId = tab.dataset.category + '-services';
+            document.getElementById(categoryId).classList.add('active');
+        });
+    });
+
+  
+
+// Contact form submission
+document.querySelector('#contact form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    
+    try {
+        const formData = {
+            name: form.querySelector('#name').value,
+            email: form.querySelector('#email').value,
+            subject: form.querySelector('#subject').value,
+            message: form.querySelector('#message').value
+        };
+        
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            // Show success message
+            submitBtn.textContent = 'Message Sent!';
+            form.reset();
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+            }, 2000);
+        } else {
+            alert('Failed to send message. Please try again.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Network error. Please try again.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+    }
 });
 
-// Booking Modal
+// Booking Modal Functionality
 const bookButtons = document.querySelectorAll('.book-btn');
 const bookingModal = document.querySelector('.booking-modal');
 const closeModal = document.querySelector('.close-modal');
-const selectedServiceField = document.getElementById('selected-service');
-const serviceInput = document.getElementById('service');
+const closeSuccessBtn = document.getElementById('close-success');
 const bookingForm = document.getElementById('booking-form');
 const formContainer = document.getElementById('form-container');
 const successMessage = document.querySelector('.success-message');
-const closeSuccessBtn = document.getElementById('close-success');
+const selectedServiceDisplay = document.getElementById('selected-service');
+const serviceInput = document.getElementById('service');
 
-bookButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const service = button.dataset.service;
-        selectedServiceField.textContent = service;
-        serviceInput.value = service;
-        bookingModal.style.display = 'flex';
-        formContainer.style.display = 'block';
-        successMessage.style.display = 'none';
-    });
-});
+// Payment Method Toggle
+const paymentMethods = document.querySelectorAll('input[name="payment"]');
+const mpesaDetails = document.getElementById('mpesa-details');
+const cardDetails = document.getElementById('card-details');
 
-closeModal.addEventListener('click', () => {
-    bookingModal.style.display = 'none';
-});
-
-closeSuccessBtn.addEventListener('click', () => {
-    bookingModal.style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === bookingModal) {
-        bookingModal.style.display = 'none';
+// Format M-Pesa phone number
+const mpesaPhone = document.getElementById('mpesa-phone');
+mpesaPhone.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (!value.startsWith('254')) {
+        value = '254' + value.replace(/^254/, '');
     }
+    e.target.value = value;
 });
 
-// Form Submission
-bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const service = serviceInput.value;
-    const budget = document.getElementById('budget').value;
-    
-    // Simple validation
-    if (!name || !service) {
-        alert('Please fill in all required fields');
-        return;
+// Format card number
+const cardNumber = document.getElementById('card-number');
+cardNumber.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\s+/g, '').replace(/\D/g, '');
+    if (value.length > 0) {
+        value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
     }
-    
-    // Show success message
-    formContainer.style.display = 'none';
-    successMessage.style.display = 'block';
-    
-    // Reset form
-    bookingForm.reset();
-    
-    // Optional: Send data to server here
-    // fetch('/api/bookings', {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         name: name,
-    //         service: service,
-    //         budget: budget
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // .catch(error => console.error(error));
+    e.target.value = value;
 });
 
-// Animate terms cards on scroll
-const termCards = document.querySelectorAll('.term-item');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
+// Format expiry date
+const cardExpiry = document.getElementById('card-expiry');
+cardExpiry.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+    }
+    e.target.value = value;
+});
+
+// Format CVV
+const cardCvv = document.getElementById('card-cvv');
+cardCvv.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '').substring(0, 4);
+});
+
+// Payment Method Toggle
+paymentMethods.forEach(method => {
+    method.addEventListener('change', () => {
+        if (method.value === 'mpesa') {
+            mpesaDetails.style.display = 'block';
+            cardDetails.style.display = 'none';
+        } else {
+            mpesaDetails.style.display = 'none';
+            cardDetails.style.display = 'block';
         }
     });
-}, { threshold: 0.1 });
-
-termCards.forEach(card => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.5s ease';
-    observer.observe(card);
 });
-//contact form
-document.querySelector('.contact-form form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const form = e.target;
-  const submitBtn = form.querySelector('.submit-btn');
-  const originalBtnText = submitBtn.textContent;
-  
-  try {
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+
+// Open modal function
+  function openBookingModal(service) {
+    selectedServiceDisplay.textContent = service;
+    serviceInput.value = service;
+    bookingModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
     
-    const formData = {
-      name: form.querySelector('#name').value,
-      email: form.querySelector('#email').value,
-      subject: form.querySelector('#subject').value,
-      message: form.querySelector('#message').value
-    };
+    // Reset form and show form container
+    formContainer.style.display = 'block';
+    successMessage.style.display = 'none';
+    bookingForm.reset();
     
-    const response = await fetch('http://localhost:5500/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
+    // Scroll to top of modal
+    document.querySelector('.modal-content').scrollTop = 0;
+}
+
+// Close modal function
+function closeBookingModal() {
+    bookingModal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Attach event listeners to all book buttons
+bookButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const service = button.getAttribute('data-service');
+        openBookingModal(service);
+    });
+});
+
+// Close modal when clicking X or success button
+closeModal.addEventListener('click', closeBookingModal);
+closeSuccessBtn.addEventListener('click', closeBookingModal);
+
+// Close when clicking outside modal
+window.addEventListener('click', (e) => {
+    if (e.target === bookingModal) {
+        closeBookingModal();
+    }
+});
+
+// Form validation function
+function validateForm(form) {
+    let isValid = true;
+    const requiredFields = form.querySelectorAll('[required]');
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.borderColor = 'red';
+            isValid = false;
+        } else {
+            field.style.borderColor = '';
+        }
     });
     
-    const data = await response.json();
-    
-    if (response.ok) {
-      alert('Message sent successfully!');
-      form.reset();
-    } else {
-      alert(data.error || 'Failed to send message'); 
+    // Additional validation for card payments
+    const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+    if (paymentMethod === 'card') {
+        if (!cardNumber.value.trim() || cardNumber.value.replace(/\s/g, '').length < 16) {
+            cardNumber.style.borderColor = 'red';
+            isValid = false;
+        }
+        if (!cardExpiry.value.trim() || cardExpiry.value.length < 5) {
+            cardExpiry.style.borderColor = 'red';
+            isValid = false;
+        }
+        if (!cardCvv.value.trim() || cardCvv.value.length < 3) {
+            cardCvv.style.borderColor = 'red';
+            isValid = false;
+        }
+    } else if (paymentMethod === 'mpesa') {
+        if (!mpesaPhone.value.trim() || mpesaPhone.value.length < 12) {
+            mpesaPhone.style.borderColor = 'red';
+            isValid = false;
+        }
     }
-  } catch (error) {
-    alert('Network error. Please try again.');
-    console.error('Error:', error);
-  } finally {
-    submitBtn.textContent = originalBtnText;
-    submitBtn.disabled = false;
-  }
+    
+    if (!isValid) {
+        alert('Please fill in all required fields correctly');
+    }
+    
+    return isValid;
+}
+
+// Single booking form submission handler
+bookingForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (!validateForm(this)) return;
+    
+    const submitBtn = this.querySelector('.submit-booking');
+    const originalText = submitBtn.textContent;
+    
+    // Show loading state
+    submitBtn.textContent = 'Processing...';
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    
+    try {
+        const formData = {
+            name: this.querySelector('#name').value,
+            email: this.querySelector('#email').value,
+            phone: this.querySelector('#phone').value,
+            service: this.querySelector('#service').value,
+            budget: this.querySelector('#budget').value,
+            urgency: this.querySelector('#urgency').value,
+            details: this.querySelector('#details').value,
+            paymentMethod: document.querySelector('input[name="payment"]:checked').value
+        };
+        
+        // Add payment-specific data
+        if (formData.paymentMethod === 'mpesa') {
+            formData.mpesaPhone = mpesaPhone.value;
+            // Here you would typically call your M-Pesa API
+            console.log('Initiating M-Pesa payment for:', mpesaPhone.value);
+            // Simulate M-Pesa payment processing
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        } else {
+            formData.cardNumber = cardNumber.value.replace(/\s/g, '');
+            formData.cardExpiry = cardExpiry.value;
+            formData.cardCvv = cardCvv.value;
+            formData.cardName = document.getElementById('card-name').value;
+            // Here you would typically call your payment gateway API
+            console.log('Processing card payment');
+            // Simulate card payment processing
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+        
+        // In a real implementation, you would send this data to your server
+        // const response = await fetch('/api/bookings', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(formData)
+        // });
+        // const result = await response.json();
+        
+        // For demo purposes, we'll just show success
+        formContainer.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+    } catch (error) {
+        console.error('Payment error:', error);
+        alert('Payment processing failed. Please try again.');
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+    }
 });
+
     </script>
 </body>
 </html>

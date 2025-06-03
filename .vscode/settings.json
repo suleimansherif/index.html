@@ -1,0 +1,34 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySQL Local",
+            "database": "urban_clients",
+            "username": "suleiman sheriff",
+            "password": "sH12eri@28846",
+            "connectionTimeout": 50
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "urban_clients",
+            "database": "urban_clients",
+            "username": "suleiman sheriff",
+            "connectionTimeout": 500,
+            "password": "sH12eri@28846"
+        }
+    ]
+}
